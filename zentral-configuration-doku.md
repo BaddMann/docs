@@ -1,4 +1,4 @@
-# Zentral Coniguration
+# Zentral Configuration
 
 *Note*: 
 This documentation is currently unter construction and will be improved. 
