@@ -9,8 +9,8 @@ To evaluate, learn and quickly deploy Zentral you should run [Docker](<https://d
 This Tutorial will guide you to:
 
 - Pull the `zentral/zentral` image from Docker Hub.
-- Create a custom `my-zentral-config` Zentral configuration.
-- Run Zentral in Docker, check your `my-zentral-config`
+- Create a custom `my-zentral-conf` Zentral configuration.
+- Run Zentral in Docker, check your `my-zentral-conf`
 - Run Zentral in Docker, in extended Debugging mode
 - Enroll a OSX device in Terminal from the command line
 - Enter the Docker host for Debugging.
@@ -42,6 +42,7 @@ Here is a mini instruction to set one up for you.
 
 
  1.) Install Ubuntu 14.04 LTS (server or client both work) in [VMware Fusion](< or [VirtualBox](<https://www.virtualbox.org/wiki/Downloads>)
+ 
  2.) Follow this Docker for Linux: <https://docs.docker.com/linux/step_one/>
  
  *Note*: 
@@ -106,19 +107,22 @@ You have managed to download `zentral/zetral` image from Docker Hub with the `do
  
 --- 
 
-## Episode 2 - Create a custom `my-zentral-config`
+## Episode 2 - Create a custom `my-zentral-conf`
 Zentral needs to have a configuration to fully operate, we will download a demo-config and turn this into your own `my-zentral-config` and on the docker host.
 
 *Note:* 
 To check out Slack integration you must have enabled webhooks in the Slack API. How to setup a Slack channel and the Slack API is beyond the scope of this tutorial, best have a look [here](<https://api.slack.com/incoming-webhooks>)
 
-#### Clone Zentral demo-conf, turn into your `my-zentral-config`
+#### Clone Zentral demo-conf, turn into your `my-zentral-confg`
 
 
 1.) Download the [Zentral demo-conf](<https://github.com/zentralopensource/zentral-conf>) from GitHub: 
-    **Method A** - Use a Web browser, click on this link: <https://github.com/zentralopensource/zentral-conf/archive/master.zip>
-    **Method B** - Use `git` and clone the files with this command: `git clone https://github.com/zentralopensource/zentral-conf.git` 
-    
+
+**Method A** - Use a Web browser, click on this link: <https://github.com/zentralopensource/zentral-conf/archive/master.zip>
+
+**Method B** - Use `git` and clone the files with this command: 
+`git clone https://github.com/zentralopensource/zentral-conf.git` 
+
 ```bash
   root@dockerhost:~$ git clone https://github.com/zentralopensource/zentral-conf.git
   Cloning into 'zentral-conf'...
@@ -129,7 +133,9 @@ To check out Slack integration you must have enabled webhooks in the Slack API. 
   Checking connectivity... done.
 
 ``` 
+
 2.) Open the **base.json** file in your preferred text editor (vi, nano, Atom.app)
+
 3.) Change the following areas to match with your environment
 
 - Edit the **kibana_base_url** - you must provide a URL that can resolve to your docker host.
