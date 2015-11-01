@@ -146,6 +146,7 @@ Kibana and Prometheus are installed with Zentral - we will cover those in anothe
 - Kibana requires to **Configure an index pattern** for first use, the URL would be: <https://zentral.example.com/kibana/>
 
 
+![](https://github.com/zentralopensource/docs/blob/master/images/tutorial-5_Kibana_index.png)
 
 
 ### Expected Result: 
