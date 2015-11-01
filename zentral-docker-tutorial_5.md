@@ -4,7 +4,7 @@ For Production you will use a LaunchDaemon on all your devices starting osqueryd
 a `--verbose`session in Terminal.
 
 
-1.) In your DNS settings do not resolve your docker host you may want to edit your `/etc/hosts` file on your admin and on test client machine
+1.) Check if your clients can resolve the Docker hostm, so they will automatically resolve Zentral. If this is **not** the case in your environment then you can edit your `/etc/hosts` file on your mac clients to connect with Zentral.
 
 ```bash
 ##
