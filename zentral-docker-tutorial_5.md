@@ -86,9 +86,21 @@ then final file should just contain a strin in this format
 - **--tls_hostname** - you must insert your FQDN or IP from the docker host here.
 
 ```bash
+## long string for copy/paste
 ## this command must be run with sudo, you will need to provide your password 
 sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --distributed_enabled --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_poll_interval=60
 
+```
+
+```bash
+## more readable version
+sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls\ 
+--tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt \ 
+--config_tls_endpoint=/osquery/config --config_tls_refresh=60 \
+--enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt \
+--logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls \
+--distributed_enabled --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read \
+--distributed_tls_write_endpoint=/osquery/distributed/write --distributed_poll_interval=60
 ```
 
 - The **--verbose** flag should result with output in your Terminal window equal to this example:
