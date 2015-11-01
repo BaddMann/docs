@@ -1,10 +1,11 @@
 ## Episode 5 - Enroll a OSX device in Terminal from the command line
 Of course Zentral needs osquery client to enroll and connect with, this is what we're going to do now.
-For Production you will use a LaunchDaemon on all your devices starting osqueryd, but for this tutorial we're fine with
-a `--verbose`session in Terminal.
+
+For Production you will use a LaunchDaemon on all your devices starting osqueryd. 
+For this tutorial we're fine running a `--verbose`session in Terminal.
 
 
-1.) Check if your clients can resolve the Docker hostm, so they will automatically resolve Zentral. If this is **not** the case in your environment then you can edit your `/etc/hosts` file on your mac clients to connect with Zentral.
+1.) Important: Check if your clients can resolve the Docker hostm, so they will automatically resolve Zentral. If this is **not** the case in your environment then you can edit your `/etc/hosts` file on your mac clients to connect with Zentral.
 
 ```bash
 ##
@@ -51,8 +52,6 @@ then final file should just contain a strin in this format
 ## Pseudo code example
   <your_enroll_secret_here>$SERIAL$<your_device_hardware_serial_here>
 ```
-
-
 
 
 
