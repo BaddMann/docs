@@ -13,6 +13,8 @@ For OS X clients devices to connect to with [Zentral](https://github.com/zentral
 ## How to enroll OS X client devices with Zentral/osquery?
 To to help you get started to create a LaunchDaemon with all settings, enroll and connect your devices with **Zentral/osquery**, we provide a build script to build a installer package as *.pkg* file. 
 
+Script is available here: <https://github.com/zentralopensource/zentral-client>
+
 Once you have created the package (.pkg) you have to choose your own method to install/deploy the installer package to your devices (munki, Casper, etc.).
 
 **Requirement:** 
