@@ -23,7 +23,7 @@ Each Probe will provide a configuration the clients will sync with.
     
 ## Probe Details
 
-Probes are simple text files in the `Probes` directory of your `zentral-conf` on the Zentral server. The files must be written in JSON or YAML format. Currently there is no autoupdate of new/chnaged probes, any changes have to be reloaded in Zentral with Supervisor or a Docker restart (both options are very fast).
+Probes are simple text files in the `Probes` directory of your `zentral-conf` on the Zentral server. The files must be written in JSON or YAML format. Currently there is no autoupdate of new/edited probes files - any changes have to be reloaded in Zentral with Supervisor or a Docker restart (both options are very fast).
 
 Important: If the JSON or YAML formatting has any errors Zentral will fail to load, so please double check any probe with a text linter to verify your JSON or YAML files are correctly formatted.
 

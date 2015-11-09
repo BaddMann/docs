@@ -12,11 +12,74 @@ Santa is a security software from Google available as open source, read more det
 
 ## Brief Overview 
 
-In Zentral - a Probe will be used set **rule** for `santa` along with dedicated notification settings for information santa returns from the client. The client will connect to zentral via santa conf and frequently updates (sync) the santa status via TLS connection.
+In Zentral - a Probe will be used set up details for `santa` policy along with dedicated notification settings for the information santa will returns from the client. The client will connect to zentral via santa conf and frequently updates (sync) the santa status via TLS connection.
 
 
 *Note:*
-*This is only a brief tutorial on **Google Santa** -  santa is currently v.0.9.6 and it's support in Zentral is considered early tech preview in 'alpha status'. We will update the content for changes in santa binary whenever possible.*
+*This is currently only a brief tutorial for Google Santa -  santa is currently v.0.9.6, it's support in Zentral is considered early tech preview with 'alpha status'. We will update the content for future changes in santa binary whenever possible.*
+
+
+### Santa Conf on the client
+
+Please refer to setup santa on clients from the original descriptions: <https://github.com/google/santa/blob/master/README.md>
+
+As outlined Santa needs a conf file in plist format to be present in: 
+
+`/var/db/santa/config.plist`
+
+Note: The key `MachineID` must be combination of `machine_id_secret` as referenced in `zentral-conf>base.json` and must contain the serial number of your client. 
+
+```
+cat /var/db/santa/config.plist                         
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>ClientMode</key>
+  <integer>1</integer>
+  <key>MachineID</key>
+  <string>FOOBAR$SERIAL$<insert_machine_serial_here></string>
+  <key>ServerAuthRootsFile</key>
+  <string>/Users/Shared/zentral.crt</string>
+  <key>SyncBaseURL</key>
+  <string>https://zentral.example.com/santa/</string>
+  <key>SyncCleanRequired</key>
+  <true/>
+  <key>SyncLastSuccess</key>
+  <date>2015-11-09T08:34:07Z</date>
+</dict>
+</plist>
+```
+
+##### useful santa commands:
+
+- santactl sync with TLS config server (Zentral): 
+
+```
+sudo santactl sync
+```
+
+- santactl status: 
+
+```
+sudo santactl status
+Daemon Info`
+  Mode                   | Monitor
+  File Logging           | No
+  Watchdog CPU Events    | 0  (Peak: 1.38%)
+  Watchdog RAM Events    | 0  (Peak: 11.12MB)
+Kernel Info
+  Kernel cache count     | 54
+Database Info
+  Binary Rules           | 1
+  Certificate Rules      | 4
+  Events Pending Upload  | 3
+Sync Info
+  Sync Server            | https://zentral.example.com/santa/
+  Clean Sync Required    | Yes
+  Last Successful Sync   | 2015/11/05 13:06:40 +0100
+```
+
 
 ### Santa Prepare
 
