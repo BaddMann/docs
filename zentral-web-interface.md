@@ -18,7 +18,7 @@ List of devices in Inventory
 ![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_inventory_overview.png)
 
 
-#### Inventory overview
+#### Inventory detail view
 
 Device detail view with basic facts and apps (synced from external inventory like Sal or JAMF Software Server)
 
