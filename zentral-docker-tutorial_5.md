@@ -1,7 +1,7 @@
 ## Episode 5 - Enroll a OSX device in Terminal from the command line
 Of course Zentral needs osquery client to enroll and connect with, this is what we're going to do now.
 
-For Production you will use a LaunchDaemon on all your devices starting osqueryd. 
+For Production you will use a LaunchDaemon on all your devices starting osqueryd.
 For this tutorial we're fine running a `--verbose`session in Terminal.
 
 
@@ -21,7 +21,7 @@ For this tutorial we're fine running a `--verbose`session in Terminal.
 ```
 
 
-2.) Check you have osquery installed, open a Terminal window on your OS X client device. 
+2.) Check you have osquery installed, open a Terminal window on your OS X client device.
 Use this command:
 `osqueryi --version`
 
@@ -31,7 +31,7 @@ Use this command:
   osqueryi version 1.5.3
 ```
 
-*Note*: 
+*Note*:
 You may want to download latest osquery .pkg installer here: <https://osquery.io/downloads/>
 
 3.) Copy the `zentral.crt` from the [Zentral-demo-conf] (<https://github.com/zentralopensource/zentral-conf/archive/master.zip>) `tls` directory to your OS X client, for our Tutorial we expect the file in `/Users/Shared` directory.
@@ -46,7 +46,7 @@ You may want to download latest osquery .pkg installer here: <https://osquery.io
 The osquery `enroll_secret.txt`consist of a shared secret represented in the **base.json** file
 We need to bild a simple text file with these ingredients `Shared Secret` and `Computer Serial`
 
-then final file should just contain a strin in this format
+then final file should just contain a string in this format
 
 ```bash
 ## Pseudo code example
@@ -54,12 +54,19 @@ then final file should just contain a strin in this format
 ```
 
 
+Note: your enroll_secret must match with the string you have in zentral-conf `base.json`:
+<https://github.com/zentralopensource/zentral-conf/blob/1724f0907acf85b182593af7c54d9d637ad1fc5e/base.json#L67-L69>
+```
+"zentral.contrib.osquery": {
+  "enroll_secret_secret": "FOOBARBAZ"
+},
+```
 
 - Check for your computer serial number
 
 ```bash
   /usr/sbin/system_profiler SPHardwareDataType | awk '/Serial/ {print $4}'
-``` 
+```
 
 - Create a text file in `/Users/Shared/`
 
@@ -87,27 +94,27 @@ then final file should just contain a strin in this format
 
 ```bash
 ## long string for copy/paste
-## this command must be run with sudo, you will need to provide your password 
-sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --distributed_enabled --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_poll_interval=60
+## this command must be run with sudo, you will need to provide your password
+sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
 
 ```
 
 ```bash
 ## more readable version
-sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls\ 
---tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt \ 
+sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls\
+--tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt \
 --config_tls_endpoint=/osquery/config --config_tls_refresh=60 \
 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt \
 --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls \
---distributed_enabled --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read \
---distributed_tls_write_endpoint=/osquery/distributed/write --distributed_poll_interval=60
+--disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read \
+--distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
 ```
 
 - The **--verbose** flag should result with output in your Terminal window equal to this example:
 
 ```bash
-## example 
-sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --distributed_enabled --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_poll_interval=60
+## example
+sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
 I1030 19:01:07.904667 1957675008 init.cpp:273] osquery initialized [version=1.5.3]
 I1030 19:01:07.929126 1957675008 processes.cpp:183] An error occurred retrieving the env for pid: 84437
 I1030 19:01:07.929256 1957675008 system.cpp:172] Found stale process for osqueryd (84437) removing pidfile
@@ -132,14 +139,14 @@ I1030 19:01:08.427048 9064448 events.cpp:507] Starting event publisher run loop:
 I1030 19:01:08.427284 9601024 tls.cpp:196] TLS/HTTPS POST request to URI: https://zentral.example.com/osquery/distributed/read
 ```
 
-7.) Wait for a short moment then go to the Zentral > Inventory section and look into the events returned to Zentral: 
+7.) Wait for a short moment then go to the Zentral > Inventory section and look into the events returned to Zentral:
 
 
-- As you know your machine serial can directly enter the events by using a URL like this: 
+- As you know your machine serial can directly enter the events by using a URL like this:
 <https://zentral.example.com/inventory/machine/C02Q239GHG2/events/>
 
 
-*Note*: 
+*Note*:
 Kibana and Prometheus are installed with Zentral - we will cover those in another tutorial later.
 
 - To inspect Prometheus the URL would be like: <https://zentral.example.com/prometheus/>
@@ -149,6 +156,6 @@ Kibana and Prometheus are installed with Zentral - we will cover those in anothe
 ![](https://github.com/zentralopensource/docs/blob/master/images/tutorial-5_Kibana_index.png)
 
 
-### Expected Result: 
+### Expected Result:
 Your Client should enroll with the **Zentral/osquery** App running inside the `zentral/zentral` container on your docker host.
 The Probes will download to the client and processed, you will see frequently in terminal how the `osqueryd` binary will contact Zentral via TLS, runs the SQL query and will post back results to Zentral, if Actions trigger in the Probes you should see the in the Zentral User Interface `Inventory > Machine Serial > View Events` Sectio.n
