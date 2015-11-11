@@ -17,7 +17,7 @@ For this tutorial we're fine running a `--verbose`session in Terminal.
 127.0.0.1       localhost
 255.255.255.255 broadcasthost
 ::1             localhost
-192.168.94.134  zentral zentral.example.com
+192.168.94.134  zentral
 ```
 
 
@@ -91,18 +91,20 @@ Note: your enroll_secret must match with the string you have in zentral-conf `ba
 6.) We start the `osqueryd` binary with a lot of arguments, you must change at least one to make it work successfully
 
 - **--tls_hostname** - you must insert your FQDN or IP from the docker host here.
+*Note: We will use the shortname: `--tls_hostname=zentral` for our example command below. As a certificate for TLS connection with `osqueryd` our supplied cert is working just for the shortname, if you try fqdn that will fail with cert name mismatch, fqdn will work of course fine once you replace the TLS certificate in zentral-conf with your own certs matching your fqdn.*
+
 
 ```bash
 ## long string for copy/paste
 ## this command must be run with sudo, you will need to provide your password
-sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
+sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
 
 ```
 
 ```bash
 ## more readable version
 sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls\
---tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt \
+--tls_hostname=zentral --tls_server_certs=/Users/Shared/zentral.crt \
 --config_tls_endpoint=/osquery/config --config_tls_refresh=60 \
 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt \
 --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls \
@@ -114,7 +116,7 @@ sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls
 
 ```bash
 ## example
-sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral.example.com --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
+sudo osqueryd --database_path=/tmp/zentral/osquery --verbose --config_plugin=tls --tls_hostname=zentral --tls_server_certs=/Users/Shared/zentral.crt --config_tls_endpoint=/osquery/config --config_tls_refresh=60 --enroll_tls_endpoint=/osquery/enroll --enroll_secret_path=/Users/Shared/enroll_secret.txt --logger_tls_endpoint=/osquery/log --logger_tls_period=31 --logger_plugin=tls --disable_distributed=false --distributed_plugin=tls --distributed_tls_read_endpoint=/osquery/distributed/read --distributed_tls_write_endpoint=/osquery/distributed/write --distributed_interval=60
 I1030 19:01:07.904667 1957675008 init.cpp:273] osquery initialized [version=1.5.3]
 I1030 19:01:07.929126 1957675008 processes.cpp:183] An error occurred retrieving the env for pid: 84437
 I1030 19:01:07.929256 1957675008 system.cpp:172] Found stale process for osqueryd (84437) removing pidfile
