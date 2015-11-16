@@ -1,11 +1,11 @@
 ![](https://github.com/zentralopensource/zentral/wiki/images/Zentral_base_RGB.png)
 
-# Zentral web interface details 
+# Zentral web interface details
 Zentral web interface details:
 
-- Django 1.8 Web Framework 
+- Django 1.8 Web Framework
 - Bootstrap 3
-- Nginx 
+- Nginx
 
 This section is a short example overview from various areas in Zentral web interface as well as [Kibana4](<https://www.elastic.co/products/kibana>) and [Prometheus](<http://prometheus.io>)
 
@@ -48,7 +48,9 @@ Status events returned from osquery as scheduled on client devices.
 
 ![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_osquery_status.png)
 
-### Inventory Events > Santa 
+#### osquery status
+
+### Inventory Events > Santa
 
 Details on Google Santa features and functionality: [Google Santa](<https://github.com/google/santa>)
 
@@ -69,17 +71,32 @@ Sync details returned from Google Santa binary on client device.
 
 #### Probes view
 
+##### osquery probes
 Zentral Probe detail view (no editing in Web UI currently) with direct link to Kibana4 UI [Elasticsearch button].
 
 Notification actions for this osquery probe will send notification to:
 
-- Slack
-- Push notification to iOS via [Pushover]
+- Slack notification
+- Zendesk ticket creation
 - JSS API - Group membership in JSS will changed as result (Demo video: [Enforce JAMF MDM trigger with Zentral and osquery](<https://youtu.be/hdDoWK0A9TQ>) )
+- SMS sended via Twilio gateway
 
 
 ![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_probe_usb_zentral.png)
 
+Zentral Probe for community pack with direct link to Kibana4 UI [Elasticsearch button].
+
+![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_osquery_packs.png)
+
+Zentral Probe for FIM with file paths to monitor.
+
+![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_osquery_fim.png)
+
+##### Santa probes
+- Slack notification
+- Push notification to iOS via [Pushover]
+
+![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_probe_santa_zentral.png)
 
 ### Zentral distributed query
 
@@ -91,7 +108,7 @@ Create a new distributed query
 
 ![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_distributed_query_create.png)
 
-#### Kibana / Elasticsearch 
+#### Kibana / Elasticsearch
 
 Probe results displayed in Kibana4 UI with details from the Elasticsearch database.
 
@@ -99,7 +116,7 @@ Probe results displayed in Kibana4 UI with details from the Elasticsearch databa
 
 
 
-## Prometheus 
+## Prometheus
 
 #### Application time series view
 
@@ -114,7 +131,3 @@ Time series overview of OS X version updated sourced from all client devices.
 ![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_prometheus_osx_vers.png)
 
 ---
-
-
-
-
