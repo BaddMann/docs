@@ -48,8 +48,6 @@ Status events returned from osquery as scheduled on client devices.
 
 ![](https://github.com/zentralopensource/docs/blob/master/images/zentral_ui_osquery_status.png)
 
-#### osquery status
-
 ### Inventory Events > Santa
 
 Details on Google Santa features and functionality: [Google Santa](<https://github.com/google/santa>)
