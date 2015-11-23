@@ -20,7 +20,7 @@ Check Zentral configuration
 Common errors are usually wrong terminated JSON structs - read more on JSON Structs [here](<http://www.w3resource.com/JSON/introduction.php>)
 
 ```bash
-root@dockerhost:~$  docker run -t -i -v /opt/my-znetral-conf:/home/zentral/conf zentral/zentral check
+root@dockerhost:~$  docker run -t -i -v /opt/my-zentral-conf:/home/zentral/conf zentral/zentral check
 
 Check Zentral configuration
 
@@ -37,7 +37,10 @@ zentral.core.exceptions.ImproperlyConfigured: JSON error in file /home/zentral/c
 
 ```
 *NOTE*: 
-You may also try a JSON linter but be extremely careful to post your `base.json` to any online JSON linter - remember you have just inserted some sensible data a moment ago that should not go public in any way (we've warned you here and take no responsibility).
+You may also try a JSON linter but be extremely careful to post your `base.json` to any online JSON linter - remember you have just inserted some sensible data a moment ago that should not go public in any way (we've warned you here and take no responsibility). A good local option is [jq](<https://stedolan.github.io/jq/>) which is trivial to install via brew on OS X, and very portable. It will error out on any non-valid json when piped any via stdin. Example below.
+```
+cat base.json | jq '.'
+```
 
 
 ### Expected Result: 
