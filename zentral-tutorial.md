@@ -31,48 +31,44 @@ If you can't wait any longer [start a 17 episode video tutorial here](<https://w
 
 
 ##### Pre-requisites
-- Prepare a 3rd party Signed TLS/SSL certificate (mandatory) - [Details]() and [Video \#00](<https://www.youtube.com/watch?v=01J3HPrZ-04>)
+- Prepare a 3rd party Signed TLS/SSL certificate (mandatory) - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#00](<https://www.youtube.com/watch?v=01J3HPrZ-04>)
 
 ##### Installation / Setup
 
-- Install Docker and docker-compose - [Details]() and [Video \#01](https://www.youtube.com/watch?v=gmF0jaDbZ7o)
-- Install Zentral with docker-compose - [Details]() and [Video \#01](https://www.youtube.com/watch?v=gmF0jaDbZ7o)
-- Update Zentral with git and docker-compose - [Details]() and [Video \#15](<https://www.youtube.com/watch?v=_G2LH00sJFs>)
+- Install Docker and docker-compose - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#01](https://www.youtube.com/watch?v=gmF0jaDbZ7o)
+- Install Zentral with docker-compose - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#01](https://www.youtube.com/watch?v=gmF0jaDbZ7o)
+- Update Zentral with git and docker-compose - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#15](<https://www.youtube.com/watch?v=_G2LH00sJFs>)
 
 ##### Setup / Enroll
 
-- Enroll a client with osquery to Zentral - [Details]() and [Video \#03](<https://www.youtube.com/watch?v=F1P0NTVLJqQ>)
-- Enroll a client with Google Santa to Zentral - [Details]() and [Video \#04](<https://www.youtube.com/watch?v=IKgH8WWJTaA>)
-- Enroll a client with Munki to Zentral - [Details]() and [Video \#02](<https://www.youtube.com/watch?v=LT7-nU0JwvE>)
+- Enroll a client with osquery to Zentral - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#03](<https://www.youtube.com/watch?v=F1P0NTVLJqQ>)
+- Enroll a client with Google Santa to Zentral - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#04](<https://www.youtube.com/watch?v=IKgH8WWJTaA>)
+- Enroll a client with Munki to Zentral - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#02](<https://www.youtube.com/watch?v=LT7-nU0JwvE>)
 
 ##### Setup / Integrations
 
-- Integrate with Sal - a popular munki Dashboard - [Details]() and [Video \#09](<https://www.youtube.com/watch?v=E3rJ73V8WsU>), [Video \#10](<https://www.youtube.com/watch?v=C7W0v94Pv74>)
-- Integrate with Watchman Monitoring - a great tool to detect common client issues - [Details]() and [Video \#11](<https://www.youtube.com/watch?v=IPL03ebYcd4>)
-- Integrate with JAMF CasperSuite - [Details]() and [Video \#12](<https://www.youtube.com/watch?v=CoCZ7nK3UFA>)
+- Integrate with Sal - a popular munki Dashboard - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#09](<https://www.youtube.com/watch?v=E3rJ73V8WsU>), [Video \#10](<https://www.youtube.com/watch?v=C7W0v94Pv74>)
+- Integrate with Watchman Monitoring - a great tool to detect common client issues - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#11](<https://www.youtube.com/watch?v=IPL03ebYcd4>)
+- Integrate with JAMF CasperSuite - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#12](<https://www.youtube.com/watch?v=CoCZ7nK3UFA>)
 
 ##### Inventory / BusinessUnits
 
-- Merge existing BusinessUnits into a "Meta BusinessUnit" - [Details]() and [Video \#10](<https://www.youtube.com/watch?v=C7W0v94Pv74>)
-- Activate API Enrollment for use with osquery, Santa and Munki - [Details]() and [Video \#02](<https://www.youtube.com/watch?v=LT7-nU0JwvE>)
-- Review event details from the client - [Details]() and [Video \#02](<https://www.youtube.com/watch?v=LT7-nU0JwvE>)
+- Merge existing BusinessUnits into a "Meta BusinessUnit" - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#10](<https://www.youtube.com/watch?v=C7W0v94Pv74>)
+- Activate API Enrollment for use with osquery, Santa and Munki - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#02](<https://www.youtube.com/watch?v=LT7-nU0JwvE>)
+- Review event details from the client - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#02](<https://www.youtube.com/watch?v=LT7-nU0JwvE>)
 
 ##### osquery
 
-- use ad hoc queries via distributed queries - [Details]() and [Video \#03](<https://www.youtube.com/watch?v=F1P0NTVLJqQ>)
-- setup a minimalistic `osquery only` Zentral TLS server - [Details]() and [Video \#16](<https://www.youtube.com/watch?v=6SvnfmncrD4>)
+- use ad hoc queries via distributed queries - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#03](<https://www.youtube.com/watch?v=F1P0NTVLJqQ>)
+- setup a minimalistic `osquery only` Zentral TLS server - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#16](<https://www.youtube.com/watch?v=6SvnfmncrD4>)
 
 ##### Setup / Probes
 
-- Setup Santa, create a Probe to blacklist and notify - [Details]() and [Video \#06](<https://www.youtube.com/watch?v=2YEdNs6VwTs>), [Video \#07](<https://www.youtube.com/watch?v=8o8EwaaHOrU>)
-- Detect and block evil Ransomeware with Santa, osquery and Zentral - [Details]() and [Video \#13](<https://www.youtube.com/watch?v=GzZewrXbO-s>)
+- Setup Santa, create a Probe to blacklist and notify - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#06](<https://www.youtube.com/watch?v=2YEdNs6VwTs>), [Video \#07](<https://www.youtube.com/watch?v=8o8EwaaHOrU>)
+- Detect and block evil Ransomeware with Santa, osquery and Zentral - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#13](<https://www.youtube.com/watch?v=GzZewrXbO-s>)
 
 ##### Setup / Actions
 
-- setup Slack integration with WebHooks - [Details]() and [Video \#05](<https://www.youtube.com/watch?v=YSjdgO7p2mU>)
-- create custom links to external web services - [Details]() and [Video \#08](<https://www.youtube.com/watch?v=aVBGjtuy6EU>)
-- use template overwrites to MunkireportPHP and other systems - [Details]() and [Video \#14](<https://www.youtube.com/watch?v=BfTteF2Y62A>)
-
-##### Debugging techniques
-
-- Enter the Docker host for Debugging - [Details]()
+- setup Slack integration with WebHooks - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#05](<https://www.youtube.com/watch?v=YSjdgO7p2mU>)
+- create custom links to external web services - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#08](<https://www.youtube.com/watch?v=aVBGjtuy6EU>)
+- use template overwrites to MunkireportPHP and other systems - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#14](<https://www.youtube.com/watch?v=BfTteF2Y62A>)
