@@ -14,7 +14,15 @@
 6) What if you're somehow not feeling safe using Docker in production? Please note Zentral is just a regular Django app - it's deployment is as simple and/or involved like any other Django app.
 
 
-### Video Tutorials
+**Disclaimer:**
+
+- *These tutorials show how to get started with Zentral quickly via docker-compose in a lab situation, how to integrate a great range additional components, how to use inventory from other sources, get started with osquery, Google Santa, etc.*
+
+- *The idea of the tutorials is to cover as much visually as possible to follow along - but of course in doing so we can not always the follow so called best practice, most secure way, how one would perform similar tasks in a 'non lab' situation.*
+
+- *Short examples: We usually don't recommend to connect to servers directly with root, yes we do know there's much better ways to edit Munki manifests - we very much like what Greg Neagle (MWA2)  Hannes Juutilainen(MunkiAdmin) and others have done for the Munki ecosystem.*
+
+## Video Tutorials
 
 *Basic tutorial facts:*
 
@@ -28,7 +36,6 @@ A multitude of things in IT are way easier to follow visually along with documen
 We hope to help you get started, stay up date with Zentral, know about accompanied technologies - with a step by step Video Tutorial - as a base component of this tutorial. We think it's exciting to watch a full walk thru, at least will help you for to explore osquery /  santa quickly and hope very much to get you started with Zentral in the future.
 
 If you can't wait any longer [start a 17 episode video tutorial here](<https://goo.gl/S4o8KF>) - please don't forget to review our summary section below, especially if you need to jump into specific topics like osquery or client enrollment.
-
 
 ##### Pre-requisites
 - Prepare a 3rd party Signed TLS/SSL certificate (mandatory) - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#00](<https://www.youtube.com/watch?v=01J3HPrZ-04>)
