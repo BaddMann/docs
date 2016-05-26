@@ -144,12 +144,6 @@ santactl sync
 [Tutorial Video](https://www.youtube.com/watch?v=aVBGjtuy6EU&list=PLv__E26s_yEy5TwVRwAb-99_MA20BGhgX&index=10)
 
 
----
-## Tutorial - Episode 08 - Setup/External: add extra links to Zentral webinterface
-[Tutorial Video](https://www.youtube.com/watch?v=C7W0v94Pv74&index=12&list=PLv__E26s_yEy5TwVRwAb-99_MA20BGhgX)
-
-
-
 ## Tutorial - Episode 10 - Inventory/Sal: setup Sal-Scripts on client, merge Business Unites in Zentral
 
 [Tutorial Video](https://www.youtube.com/watch?v=C7W0v94Pv74&index=12&list=PLv__E26s_yEy5TwVRwAb-99_MA20BGhgX)
