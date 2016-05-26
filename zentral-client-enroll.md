@@ -1,48 +1,28 @@
 # Introduction
 
-[Zentral](https://github.com/zentralopensource/zentral) is running in a Django web framework - the **Zentral/osquery App** operates as a TLS endpoint for your osquery clients devices to connect with. 
+[Zentral](https://github.com/zentralopensource/zentral) is running in a Django web framework - the **Zentral/osquery App** operates as a TLS endpoint for osquery, **Zentral/santa App** as a TLS endpoint for Google Santa, **Zentral/munki App** for Munki to connect with.
 
-Clients running [osqueryd](https://osquery.io/) and enrolled with Zentral can pull osquery configurations and push results back to Zentral. 
+Clients devices must have installed the according technology before they can connect with Zentral.
 
-To quick start or debugging you can run the `osqueryd` binary with required arguments in a Terminal session (see example below) - but obviously that method would not scale for a fleet of devices.
+- Clients running [osqueryd](https://osquery.io/) and enrolled with Zentral can pull osqueryd configurations and push results back to Zentral.
 
-For OS X clients devices to connect to with [Zentral](https://github.com/zentralopensource/zentral) you must have [osquery](https://osquery.io/) installed (osquery v.1.5.3 or later) and create a LaunchDaemon to run the `osqueryd` binary with all required arguments, `osqueryd` will *enroll* the device and direct all traffic (TLS encrypted) to your own instance of Zentral.
+- Clients running [Santa](https://github.com/google/santa) and enrolled with Zentral can pull Santa policies and push results back to Zentral.
+
+- Clients running [Munki](https://www.munki.org/munki/) and enrolled with Zentral can push inventory data and events history to Zentral.
 
 ---
 
-## How to enroll OS X client devices with Zentral/osquery?
-To to help you get started to create a LaunchDaemon with all settings, enroll and connect your devices with **Zentral/osquery**, we provide a build script to build a installer package as *.pkg* file. 
+## How to enroll OS X client devices with Zentral for osquery, Santa and Munki?
 
-Script is available here: <https://github.com/zentralopensource/zentral-client>
+Since late 2015 Zentral supports a simple way to enroll OS X clients by providing a prebuild OS X packages for each technology to download from the Zentral web interface.
 
-Once you have created the package (.pkg) you have to choose your own method to install/deploy the installer package to your devices (munki, Casper, etc.).
+##### There's four conditions you have to keep in mind:
 
-**Requirement:** 
-To run the script provided to build your custom OS X Zentral Enrollment package, it is required to use [munkipkg](<https://github.com/munki/munki-pkg>), a simple and great tool by Greg Neagle (creator of munki) - [munkipkg](<https://github.com/munki/munki-pkg>) provides a great amount of flexibility building packages (it use Apple `pkgbuild` under the hood), simplify code signing and enables to commit your sources into a git repository (great to track changes).
+1.) Inventory is organized in BusinessUnits, depending on your use you ma have just one or many BusinessUnits. In any case you should enroll a client to a selected BusinessUnit. Zentral will build a dedicated package per technology, when downloading just select the BusinessUnit accordingly from the menue.
 
 
-### Steps to create a Zentral Enroll Package
+2.) For osquery, Google Santa to be able to pull configurations and push results back to Zentral they need to be enrolled separately. Same will apply for Munki which pushes local inventory and events history to Zentral. The packages to enroll clients are downloaded in the Zentral web interface from the **Enroll** menue of the selected technology (osquery, Santa, Munki).
 
-To run the `Zentral-enroll-build.sh` script you must have [munkipkg](<https://github.com/munki/munki-pkg>) utility installed. 
-Read more details here: <https://github.com/munki/munki-pkg>
+3.) Clients devices must have installed the according technology before they can connect with Zentral. Please install latest version of osquery, Santa or Munki first befor you'll try to enroll a client with Zentral.
 
-
-1. First you need to downloaded the [munkipkg](<https://github.com/munki/munki-pkg>) utility.
-1. Change `Create_enroll-pkg` parameters to match your organisation
- 
-2. If needed download [munkipkg](<https://github.com/munki/munki-pkg>)
-3. Ensure `munkipkg` is in your path (copy to `/usr/local/bin` or reference in `Create_enroll-pkg.sh` script)
-2. start the **Create_enroll-pkg** in Terminal: `./Create_enroll-pkg.sh` 
-
-
-### IMPORTANT: Script Parameter to adjust:
-- **ZENTRAL_TLS_HOST**
-- **ENROLL_SECRET_KEY**
-
-```
-ZENTRAL_TLS_HOST="zentral.pretendco.com"
-ENROLL_SECRET_KEY="FOOBARBAZ"
-WORK_DIR="/usr/local/zentral" 
-ENROLL_SECRET_PATH="/usr/local/zentral/enroll_secret.txt"  
-LAUNCH_DAEMON_NAME="com.facebook.osqueryd"  
-```
+4.) The packages downloaded to enroll with Zentral are normal *unsigned* flat-packages for OS X. It's up to you how to deploy these packages to your clients.

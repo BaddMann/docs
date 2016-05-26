@@ -1,38 +1,31 @@
 # Zentral Configuration
 
-*Note*: 
-This documentation is currently unter construction and will be improved. 
-We will move the dokumentation will soon move to: http://zentral.readthedocs.org/en/latest/
-
-Here you will find a demo configuration for Zentral [here](https://github.com/zentralopensource/zentral-conf), use the files in the code repository as a reference with this dokumentation.
-
-
 ## Introduction
 
 The Zentral Configuration must be changed and customized to make [Zentral](https://github.com/zentralopensource/zentral) work for you in your own environment.
 
-When running Zentral in a Docker container it is mandatory to provide your custom configuration mounted as a folder into your *zentral* Docker container: 
+When running Zentral in a Docker setup (via docker-compose) it is mandatory to provide a custom configuration that docker containers will connect with, usually it's just a folder into your *zentral* Docker host:
 
 ```bash
 /home/zentral/conf
 ```
 
-To get started with Zentral we recommend to follow our [Zentral Docker Tutorial](https://github.com/zentralopensource/zentral/wiki/zentral-docker-tutorial.md).
+To get started with Zentral we recommend to follow our new enhanced [Zentral Tutorial](https://github.com/zentralopensource/zentral/wiki/).
 
 
 ## Overview
 
-The main files for [Zentral](https://github.com/zentralopensource/zentral) Configuration are:
+The main files for your custom [Zentral](https://github.com/zentralopensource/zentral) configuration are:
 >
-- **base.json** - configure important App settings, provide API credentials 
+- **base.json** - configure important App settings, provide API credentials
 (SAL API key, JAMF JSS API user/password, Slack API key)
 - **contacts.json** - provide the contacts for email notifications
 - **Probes** - Directory with some Probes to start with, it's possible to use both JSON and YAML format.
-- **tls** - A certificate, ca-cert and private key is a requirement to have in place for osquery TLS connections. 
-You may use the self signed cert provided here to start with, it is strongly recommend to replace these certs with your own organisation certificates. 
+- **tls** - A certificate, ca-cert and private key is a requirement to have in place for osquery TLS connections.
+You may use the self signed cert provided here to start with, it is strongly recommend to replace these certs with your own organisation certificates.
 
-*Important Note:* 
-We use a 3rd party signed SSL/TLS in production - benefit with this setup is clients don't need to have a the zentral.crt installed and provided to osqueryd.
+*Important Note:*
+It is a rrecommendation and requirement (enforced by osquery) to use a valid 3rd party signed SSL/TLS certificate in production - all necessary files for the client are installed on when enrollment packages from Zentral used.
 
 ---
 
@@ -45,12 +38,12 @@ The base.json is the main config file, you may want to adjust:
 
 #### Actions
 
-Actions get called from a Probe. You have to configure *Actions* globally in Zentral-Conf. 
-Actions will usually triggered once a Probe returns a result (i.e. osquery has detected a state change on a client, described with a query as part of the Probe) 
- 
- - **debug:** 
+Actions get called from a Probe. You have to configure *Actions* globally in Zentral-Conf.
+Actions will usually triggered once a Probe returns a result (i.e. osquery has detected a state change on a client, described with a query as part of the Probe)
+
+ - **debug:**
  Creates files in a `/tmp/zentral_notifications/` directory on the Zentral Server (which would be your Docker host). This can useful for debugging.
- 
+
 ```
   "debug": {
     "backend": "zentral.core.actions.backends.json_file",
@@ -59,7 +52,7 @@ Actions will usually triggered once a Probe returns a result (i.e. osquery has d
 ```
 
 
- - **slack_chn:** 
+ - **slack_chn:**
  Post to Slack group chat channel, you need to provide a Slack webhook to connect to the Slack API, read details to configure Slack [here](<  
 
 ```
@@ -70,7 +63,7 @@ Actions will usually triggered once a Probe returns a result (i.e. osquery has d
 ```
 
 
- - **email:** 
+ - **email:**
 Post to Slack group chat channel, you need to provide a Slack webhook to connect to the Slack API,  more details to configure Slack webhooks [here](<https://api.slack.com/incoming-webhooks>)  
 
 ```
@@ -90,13 +83,13 @@ Post to Slack group chat channel, you need to provide a Slack webhook to connect
 Zentral runs specialized modules for *Inventory* and *osquery*. These modules work as Apps inside the Django Web Framework and require some custom configuration:
 
 
-**Inventory:** 
-Configure Inventory is required to connect with your instance of **Sal** or **JAMF Software Server** 
+**Inventory:**
+Configure Inventory is required to connect with your instance of **Sal** or **JAMF Software Server**
 
 
-- **Example 1**  (JAMF managed clients): 
+- **Example 1**  (JAMF managed clients):
 Connect with a [JAMF Software Server] (<http://www.jamfsoftware.com/products/casper-suite/>) (JSS) via the JSS API (unofficial JSS API doku [here](<https://bryson3gps.wordpress.com/the-unofficial-jss-api-docs/>))
- 
+
 ```
 "apps": {
    "zentral.contrib.inventory": {
@@ -109,7 +102,7 @@ Connect with a [JAMF Software Server] (<http://www.jamfsoftware.com/products/cas
    },
 ```
 
-- **Example 2** (Munki managed clients): 
+- **Example 2** (Sal dashboard for munki managed clients):
 Connect with a instance of [Sal](<https://github.com/salopensource/sal>) via SalAPI.
 Details to configure the [Sal API] (<https://github.com/salopensource/sal/blob/master/docs/API.md>)
 
@@ -124,18 +117,6 @@ Details to configure the [Sal API] (<https://github.com/salopensource/sal/blob/m
    "private_key": "kaUHozVUQtptuxCOMEjQrwqDndZUDPVKEBVQNhOrHUEPCKZoTPzppndeDCPgYSvC"                 
  },
 ```
-
-
-**osquery**
-
-For a osquery TLS connection and enrollment you need to create a shared secret on the TLS Server (Zentral) and also use the same secret from the clients to enroll with `osqueryd` binary  
- 
- 
- ```
-    "zentral.contrib.osquery": {
-      "enroll_secret_secret": "FOOBARBAZ"
-    }
- ```
 
 ### contacts.json file
 In the contacts you store the groups you want to post notifications via email.
@@ -154,7 +135,7 @@ In the contacts you store the groups you want to post notifications via email.
   "groups":["nonadmin"]
  }
 ]
-``` 
+```
 
 ---
 
@@ -166,7 +147,7 @@ Probes are a vital concept of Zentral, you can create multiple *Probes* with dif
 A Probe structure is as follows:
 
 - **name** - A unique name for each Probe
-- **osquery** - Provide a custom osquery SQL or a osquery pack 
+- **osquery** - Provide a custom osquery SQL or a osquery pack
 - **actions** - Actions to trigger when the probe returns a result
 
 Probes could be created in two formats JSON and more human readable YAML
@@ -174,12 +155,12 @@ Probes could be created in two formats JSON and more human readable YAML
 
 **Probes**
 
-Each Probe is a file inside the `probes` directory: 
-> `../my-zentral-conf/probes` 
+Each Probe is a file inside the `probes` directory:
+> `../my-zentral-conf/probes`
 
 
 - **Probe - JSON Example**:  
-A push metrics probe 
+A push metrics probe
 
 ```
     {"name":"networking",
@@ -228,7 +209,6 @@ osquery:
     slack_chn1: null
     debug:
       sub_dir: usb
-``` 
+```
 
 *Note: To see this probe in action look a demo video [here](https://youtu.be/hdDoWK0A9TQ)*
-
