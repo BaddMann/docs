@@ -297,10 +297,6 @@ docker-compose up -d
 ```
 docker-compose stop && docker-compose rm -f
 ```
-#### Start all over in a minimal config
-```
-docker-compose up -d
-```
 
 #### Minimal apps in base.json
 ```
@@ -314,6 +310,10 @@ docker-compose up -d
 }
 ```
 
+#### Start all over in a minimal config
+```
+docker-compose up -d
+```
 
 #### A test query
 ```
