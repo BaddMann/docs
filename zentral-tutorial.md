@@ -27,7 +27,7 @@
 A multitude of things in IT are way easier to follow visually along with documentation.
 We hope to help you get started, stay up date with Zentral, know about accompanied technologies - with a step by step Video Tutorial - as a base component of this tutorial. We think it's exciting to watch a full walk thru, at least will help you for to explore osquery /  santa quickly and hope very much to get you started with Zentral in the future.
 
-If you can't wait any longer [start a 17 episode video tutorial here](<https://www.youtube.com/watch?v=gmF0jaDbZ7o&list=PLW2WReANATsX63zhrFErjScIy-HWEjXWf>) - please don't forget to review our summary section below, especially if you need to jump into specific topics like osquery or client enrollment.
+If you can't wait any longer [start a 17 episode video tutorial here](<https://goo.gl/qsIVkl>) - please don't forget to review our summary section below, especially if you need to jump into specific topics like osquery or client enrollment.
 
 
 ##### Pre-requisites
