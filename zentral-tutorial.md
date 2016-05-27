@@ -33,7 +33,7 @@
 ```
 
 Why do we provide a video based tutorial? A multitude of things in IT are way easier to follow a first time visually along with documentation.
-We hope to help you get started, stay up date with Zentral, know about and gain interest on accompanied technologies. The step by step Video Tutorial is provided as a base component of this tutorial. We think it's exciting to watch a full walk thru to setup Zentral, at least help you to explore and get excited about osquery / santa quickly (as we did), and finally hope very much to get you started to work with, contribute to, and follow along Zentral in the future.
+We hope to help you get started, stay up to date with Zentral, learn about and gain interest on accompanied technologies. The step by step Video Tutorial is provided as a base component of this tutorial. We think it's exciting to watch a full walk thru to setup Zentral, at least help you to explore and get excited about osquery / santa quickly (as we did), and finally hope very much to get you started to work with, contribute to, and follow along Zentral in the future.
 
 If you can't wait any longer now - [start a 17 episode video tutorial here](<https://goo.gl/S4o8KF>) - also don't forget to return and review  summary section below, especially if you'd need to jump again into specific topics like learning more on osquery, craeting probes, or how to do a quick client enrollment for one of the technologies covered.
 
