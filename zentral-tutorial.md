@@ -3,24 +3,24 @@
 
 1) Look to a 10 min walk thru screencast from the Mac Brains - [Hack The Mac contest] (<https://www.youtube.com/watch?v=bDWFRntc2eQ&list=PLv__E26s_yEy5TwVRwAb-99_MA20BGhgX&index=1) in November 2015. In case you want to catch up with basic facts about *osquery, Santa, Zentral*
 
-2) To get you started with Zentral we recommend [Docker](<https://docs.docker.com>).
+2) To get you started with Zentral we recommend using [Docker](<https://docs.docker.com>).
 
-3) A *docker-compose* file is provided with Zentral sourcem - the "How to..." is covered well in our video tutorial.
+3) A *docker-compose* file is provided with Zentral source - the "How to..." is covered well in our video tutorial.
 
 4) With docker-compose you can start Zentral in a multi container setup almost instantly.
 
-5) The Docker compose-setup is ready for testing, development and production* (of course some  use Docker already successful in prod).
+5) The  *docker-compose* setup is ready for testing, development and production (of course some use Docker already successful in prod).
 
-6) What if you're somehow not feeling safe using Docker in production? Please note Zentral is just a regular Django app - it's deployment is as simple and/or involved like any other Django app.
+6) What if you're somehow not feeling safe using Docker in production right now? That should not be a problem, please note Zentral is just a regular Django app - deployment is as simple and/or involved like any other Django app.
 
 
 **Disclaimer:**
 
 - *These tutorials show how to get started with Zentral quickly via docker-compose in a lab situation, how to integrate a great range additional components, how to use inventory from other sources, get started with osquery, Google Santa, etc.*
 
-- *The idea of the tutorials is to cover as much visually as possible to follow along - but of course in doing so we can not always the follow so called best practice, most secure way, how one would perform similar tasks in a 'non lab' situation.*
+- *The idea of the tutorials is to cover as much visually as possible to follow along - but of course in doing so we can not always follow so called best practice, or most secure way, how one would perform similar tasks in a 'non lab' situation.*
 
-- *Short examples: We usually don't recommend to connect to servers directly with root, yes we do know there's much better ways to edit Munki manifests - we very much like what Greg Neagle (MWA2)  Hannes Juutilainen (MunkiAdmin) and others have done for the Munki ecosystem.*
+- *Short examples: We usually don't recomend to connect to servers directly with root - consider a dedicated account for docker in prod. Yes we do know there's better ways to edit Munki manifests - we very much love what Greg Neagle (MWA2), Hannes Juutilainen (MunkiAdmin) and others have done for the Munki ecosystem.*
 
 ## Video Tutorials
 
@@ -32,10 +32,10 @@
 - Average length per tutorial: ~ 3-4 min
 ```
 
-A multitude of things in IT are way easier to follow visually along with documentation.
-We hope to help you get started, stay up date with Zentral, know about accompanied technologies - with a step by step Video Tutorial delivered as a base component of this tutorial. We think it's exciting to watch a full walk thru, at least will help you to explore osquery / santa quickly, and finally hope very much to get you started to work with, contribute and follow along Zentral in the future.
+Why do we provide a video based tutorial? A multitude of things in IT are way easier to follow a first time visually along with documentation.
+We hope to help here you get started, stay up date with Zentral, know about and gain interest on accompanied technologies. The step by step Video Tutorial is provided as a base component of this tutorial. We think it's exciting to watch a full walk thru to setup Zentral, at least help you to explore and get excited about osquery / santa quickly (as we did), and finally hope very much to get you started to work with, contribute to, and follow along Zentral in the future.
 
-If you can't wait any longer [start a 17 episode video tutorial here](<https://goo.gl/S4o8KF>) - please don't forget to review our summary section below, especially if you'd need to jump into specific topics like learning more on osquery or how to do a quick client enrollment for a technology covered.
+If you can't wait any longer now - [start a 17 episode video tutorial here](<https://goo.gl/S4o8KF>) - also don't forget to return and review  summary section below, especially if you'd need to jump again into specific topics like learning more on osquery, craeting probes, or how to do a quick client enrollment for one of the technologies covered.
 
 ##### Pre-requisites
 - Prepare a 3rd party Signed TLS/SSL certificate (mandatory) - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#00](<https://www.youtube.com/watch?v=01J3HPrZ-04>)
