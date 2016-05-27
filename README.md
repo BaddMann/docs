@@ -8,6 +8,10 @@ It is an open source tool that can enhance stability and security thanks to its 
 
 Zentral will fit many kinds of public and private organizations which are either already utilizing  or allow those that are wanting to utilize the Mac platform. It is ready for use in enterprise environments and is tailored towards #macadmins that want to enhance the tools, they already know, with a dedicated open source solution for better incident and event-based management.
 
+
+*Zentral is a great add on to strengthen productivity, stability, and security for the Mac platform - the full framework of Zentral will enable organizations in need, to establish a transparent, and open source Security Incident and Event Management Solution (SIEM), with outstanding OS X support.*
+
+
 ## Zentral Video Tutorial
 *latest update: May 2016*
 
