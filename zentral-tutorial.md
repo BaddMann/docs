@@ -66,8 +66,8 @@ If you can't wait any longer now - [start a 17 episode video tutorial here](<htt
 
 ##### osquery
 
-- use ad hoc queries via distributed queries - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#03](<https://www.youtube.com/watch?v=F1P0NTVLJqQ>)
-- setup a minimalistic `osquery only` Zentral TLS server - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#16](<https://www.youtube.com/watch?v=6SvnfmncrD4>)
+- Use ad hoc queries via distributed queries - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#03](<https://www.youtube.com/watch?v=F1P0NTVLJqQ>)
+- Setup a minimalistic `osquery only` Zentral TLS server - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#16](<https://www.youtube.com/watch?v=6SvnfmncrD4>)
 
 ##### Setup / Probes
 
@@ -76,6 +76,6 @@ If you can't wait any longer now - [start a 17 episode video tutorial here](<htt
 
 ##### Setup / Actions
 
-- setup Slack integration with WebHooks - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#05](<https://www.youtube.com/watch?v=YSjdgO7p2mU>)
-- create custom links to external web services - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#08](<https://www.youtube.com/watch?v=aVBGjtuy6EU>)
-- use template overwrites to MunkireportPHP and other systems - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#14](<https://www.youtube.com/watch?v=BfTteF2Y62A>)
+- Setup Slack integration with WebHooks - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#05](<https://www.youtube.com/watch?v=YSjdgO7p2mU>)
+- Create custom links to external web services - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#08](<https://www.youtube.com/watch?v=aVBGjtuy6EU>)
+- Use template overwrites to MunkireportPHP and other systems - [Details](https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md) and [Video \#14](<https://www.youtube.com/watch?v=BfTteF2Y62A>)
