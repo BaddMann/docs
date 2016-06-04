@@ -2,7 +2,10 @@
 
 ## Zentral - a short summary
 
-[Zentral](https://github.com/zentralopensource/zentral) is a substantial framework to gather specific information, filter events, trigger notification, and enable compelling workflow automation. With Zentral's orchestration of osquery and Santa you will be empowered by having a broader source of information and knowledge about your IT infrastructure, and you can even identify and react to changes on OS X and Linux clients.
+[Zentral](https://github.com/zentralopensource/zentral) is a open source Framework and server solution to manage configurations for osquery and santa - a build in event tracking, notification and time series event processing will complement these open source technologies.
+
+It will enable you to gather specific information, filter events, trigger notification, into an compelling event based automation and workflows.
+With Zentral's orchestration of osquery and Santa you'll be empowered by having a broader source of information and knowledge about your IT infrastructure, identify and react to changes on OS X and Linux clients.
 
 It is an open source tool that can enhance stability and security thanks to its built-in integration of existing inventory solutions that are already on the market for the Mac platform.  
 
