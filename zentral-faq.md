@@ -17,11 +17,13 @@ We provide a multi docker container setup - so you will be up in few minutes wit
 
 Simply get started with Zentral check out the video tutorials here: <URL>
 
-## how does it work ?
+## How does it work ?
 Zentral is written in Python3 and runs in a Django 1.9 Web-Framework as TLS endpoint for clients devices to connect and report to. The technology stack on the client side includes osquery, Google Santa, and munki. On server side a Nginx Webserver, a queue system, a elastic full text searchable database is used to store events. Zentral connects to existing inventory (JAMF JSS, Watchman) The Event-Filter-Action Framework will enable you to filter events from multiple sources, tags help to set scope of probes - a combination of filters, queries, policies and actions.
 
-## It sounds allover complex - can I just have one feature of it ?
+## It looks complex - can I just have the osquery feature of it ?
 Yes one’s use of tools is very different and thus Zentral is build in a highly modular fashion. If you want to run a minimalistic setup it’s a simple change in the `base.json` config to minified Zentral to a OSQuery or just a Santa TLS server. Adding integrations or re-enabling features is as simple as going minimalistic - just edit the `base.json` file and restart Zentral services.
+
+Look [here](<https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md#tutorial---episode-16---setuposquery-use-osquery-tls-feature-only-create-a-minimalistic-zentral>) into our tutorial to setup a "osquery only Zentral" in less than 3 minutes.
 
 
 ## Zentral is running over here, but why is there no Kibana4 included ?
@@ -32,6 +34,10 @@ sudo docker run --link zentral_elastic_1:elasticsearch -p 5601:5601 --rm kibana
 -> http://localhost:5601
 ```
 
+> Ehm, sorry you lost me here - what is that Kibana4 thing ?
+
+If so look for info here first: <https://www.elastic.co/products/kibana>
+
 ## How can I get a full overview and start to learn about my IT environment with Zentral ?
 
 1) Look to a 10 min walk thru screencast from the Mac Brains - [Hack The Mac contest] (<https://www.youtube.com/watch?v=bDWFRntc2eQ&list=PLv__E26s_yEy5TwVRwAb-99_MA20BGhgX&index=1) in November 2015. In case you want to catch up with basic facts about *osquery, Santa, Zentral*
@@ -41,6 +47,7 @@ sudo docker run --link zentral_elastic_1:elasticsearch -p 5601:5601 --rm kibana
 ## We have a commercial SIEM tool but are unsatisfied how to integrate Macs.
 
 Zentral is a highly modular framework and can serve multiple purpose - gather specific information, filter events, trigger notification, gain broader source of information and knowledge of what's going on in your Mac IT environment over time - depending on your specific needs you can quickly build a simple to use but tailor made Security Incident and Event Management (SIEM) solution that targets to the Mac platform.
+
 A common example is to manage and add osquery and santa security technologies with Zentral and the JAMF Casper Suite -
 new options for event based automation, monitoring capabilities, granular notifications on events will benefit from a tight integration with the JAMF Software Server (JSS) and connect MDM capabilities with the Zentral framework.
 
