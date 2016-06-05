@@ -60,4 +60,4 @@ We use the JAMF Casper Suite as our MDM with compelling event automations, osque
 
 Zentral can coexist with any MDM or integrate with specific MDM by building a `contrib app` - special code written in python - like we already show with the JAMF JSS. To build a similar integration for your MDM of choice it must have a documented Application Programming Interface (API) - contact us for consulting and services to help you here.
 
-As we very much love open source software we're extremly happy to see a new open source MDM <https://micromdm.io/> become ready and will look into options to integrate with for the future.
+As we very much love open source software we're excited and very happy to see a new open source MDM <https://micromdm.io/> is about to be ready and will look into options to integrate with for the future.
