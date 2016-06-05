@@ -22,8 +22,9 @@ Please look into our Tutorial here: <https://github.com/zentralopensource/docs/b
 
 ---
 
-# FAQ
+## FAQ
 *latest update: June 2016*
+
 You can find a FAQ section here: <https://github.com/zentralopensource/docs/blob/master/zentral-faq.md>
 
 ---
