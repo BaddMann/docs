@@ -26,7 +26,7 @@ Yes one’s use of tools is very different and thus Zentral is build in a highly
 Look [here](<https://github.com/zentralopensource/docs/blob/master/zentral-tutorial-ref.md#tutorial---episode-16---setuposquery-use-osquery-tls-feature-only-create-a-minimalistic-zentral>) into our tutorial to setup a "osquery only Zentral" in less than 3 minutes.
 
 
-## Zentral is running over here, but why is there no Kibana4 included ?
+## Zentral is running here, but why is there no Kibana4 included ?
 Glad you asked - yes the docker-compose setup for Zentral is up and running in minutes,  and includes the ElasticSearch database so of course Kibana4 is a natural fit to the technology stack of Zentral. Zentral can easily connect to Kibana4, which is pretty resource hungry. so you may want to check your resources on server / docker host. Once you’ve ready, and installed Kibana (most will run Kibana in a docker container here too) you can connect with Zentral via this docker command:
 
 ```shell
@@ -34,7 +34,8 @@ sudo docker run --link zentral_elastic_1:elasticsearch -p 5601:5601 --rm kibana
 -> http://localhost:5601
 ```
 
-> Ehm, sorry you lost me here - what is that Kibana4 thing ?
+
+> Ehm, sorry you've lost me here - what is that Kibana4 thing ?
 
 If so look for info here first: <https://www.elastic.co/products/kibana>
 
