@@ -22,12 +22,18 @@ Please look into our Tutorial here: <https://github.com/zentralopensource/docs/b
 
 ---
 
+# FAQ
+*latest update: June 2016*
+You can find a FAQ section here: <https://github.com/zentralopensource/docs/blob/master/zentral-faq.md>
+
+---
+
 ## Zentral web interface details
-*latest update: January 2016*
+*latest update: April 2016*
 
 Zentral web interface details:
 
-- Django 1.8 Web Framework
+- Django 1.9 Web Framework
 - Bootstrap 3
 - Nginx
 
