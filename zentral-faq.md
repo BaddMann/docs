@@ -61,3 +61,31 @@ We use the JAMF Casper Suite as our MDM with compelling event automations, osque
 Zentral can coexist with any MDM or integrate with specific MDM by building a `contrib app` - special code written in python - like we already show with the JAMF JSS. To build a similar integration for your MDM of choice it must have a documented Application Programming Interface (API) - contact us for consulting and services to help you here.
 
 As we very much love open source software we're excited and very happy to see a new open source MDM <https://micromdm.io/> is about to be ready and will look into options to integrate with for the future.
+
+
+## There is no authentication for Zentral - how can you run like this ?
+
+Actually we use standard NGINX so there's standard options to choose from, also Zentral is following a modular approach fully build in Django 1.9, which in turn could run Auth via additional `django.contrib.auth` addition - we're happy to see contributing while we code more on new features right now. In the meantime you could use .htaccess to give access control to the Zentral webinterface.
+
+Here's some info to get you started:
+
+Path to nginx conf.d file `../zentral/docker/nginx/conf.d/zentral.conf`
+to ensure the htaccess file i available in container place it here `zentral/docker/nginx/zentral.htpasswd`
+
+A reference code snippet from `nginx/conf.d/zentral.conf`:
+
+```shell
+location / {
+            auth_basic		"Zentral";
+            auth_basic_user_file	"/etc/nginx/zentral.htpasswd";
+            proxy_pass		http://web:8000;
+            proxy_set_header   Host             $host;
+            proxy_set_header   X-Real-IP        $remote_addr;
+            proxy_set_header   X-Forwarded-For  $proxy_add_x_forwarded_for;
+            proxy_set_header   X-Url-Scheme     $scheme;
+            client_max_body_size 10m;
+}
+```
+
+
+Read about how-to-set-up-password-authentication-with-nginx [here]( <https://www.digitalocean.com/community/tutorials/how-to-set-up-password-authentication-with-nginx-on-ubuntu-14-04>)
