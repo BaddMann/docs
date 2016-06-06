@@ -65,7 +65,7 @@ As we very much love open source software we're excited and very happy to see a 
 
 ## There is no authentication for Zentral - how can you run like this ?
 
-Actually we use standard NGINX so there's standard options to choose from, also Zentral is following a modular approach fully build in Django 1.9, which in turn could run Auth via additional `django.contrib.auth` addition - we're happy to see contributing while we code more on new features right now. In the meantime you could use .htaccess to give access control to the Zentral webinterface.
+Actually we use standard NGINX so there's standard options to choose from, also Zentral is following a modular approach fully build in Django 1.9, which in turn could run Auth via additional `django.contrib.auth` addition - we're happy to see contribution while we code more on new features for this moment (june 2016). In the meantime you could use .htaccess to give access control to the Zentral webinterface.
 
 Here's some info to get you started:
 
