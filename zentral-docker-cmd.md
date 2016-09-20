@@ -10,14 +10,6 @@ To start everything :
 $ sudo docker-compose up -d
 ```
 
-For a probe change :
-
-```bash
-$ sudo docker-compose restart processor_worker \
-                              store_worker \
-                              web
-```
-
 For a complete restart of `zentral` :
 
 ```bash
