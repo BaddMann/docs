@@ -1,14 +1,30 @@
 # Introduction
 
-[Zentral](https://github.com/zentralopensource/zentral) is running in a Django web framework - the **Zentral/osquery App** operates as a TLS endpoint for osquery, **Zentral/santa App** as a TLS endpoint for Google Santa, **Zentral/munki App** for Munki to connect with.
+[Zentral](https://github.com/zentralopensource/zentral) is a web server based on Django. Clients devices must be enrolled to Zentral to manage configurations and receive events from OSQuery, Santa, and receive inventory from Munki managed clients. Next to the client based technologies Zentral can connect also to other inventory systems like JAMF CasperSuite, Watchman Monitoring, or Sal ,and sync inventory data for clients via API.
+Events received from each inventory and clients will be indexed, processed and stored with additional metadata in a fully searchable database. 
 
-Clients devices must have installed the according technology before they can connect with Zentral.
+Your macOS client devices need to have the supported technologies [OSQuery](https://osquery.io/), [Google Santa](https://github.com/google/santa), and [Munki](https://www.munki.org/munki/) agents installed first, these will connect to Zentral by installing a dedicated Zentral enrollment package- Zentral itself is "agentless", it acts as a centralized TLS server to provide API endpoints for supported technologies.
 
-- Clients running [osqueryd](https://osquery.io/) and enrolled with Zentral can pull osqueryd configurations and push results back to Zentral.
 
-- Clients running [Santa](https://github.com/google/santa) and enrolled with Zentral can pull Santa policies and push results back to Zentral.
+**Zentral - TLS endpoint for [osquery](https://osquery.io/)**  
 
-- Clients running [Munki](https://www.munki.org/munki/) and enrolled with Zentral can push inventory data and events history to Zentral.
+- Clients running [osqueryd](https://osquery.io/), enrolled to Zentral will pull osqueryd configurations and push back results to Zentral
+- The base config for `osqueryd` on macOS / OS X based clients is stored in `/Library/LaunchDaemons/com.facebook.osqueryd.plist`
+- The required certificate used by osquery is stored at `/usr/local/zentral/tls_server_certs.crt`
+
+
+**Zentral - TLS endpoint for [Google Santa](https://github.com/google/santa)** is a TLS endpoint for Google Santa
+
+- Clients running [Santa](https://github.com/google/santa), enrolled with Zentral can pull Santa policies and push results back to Zentral.
+- Path for osqeryd config on macOS clients is `/var/db/santa/config.plist`
+
+
+**Zentral - endpoint for [Munki](https://www.munki.org/munki/) local inventory** 
+
+
+- Clients running [Munki](https://www.munki.org/munki/), enrolled with Zentral can pull Santa policies and push results back to Zentral.
+- Path for munki postflight script on macOS clients is `/usr/local/munki/postflight.d/zentral` symlinked to /usr/local/zentral/munki/zentral_postflight`
+
 
 ---
 

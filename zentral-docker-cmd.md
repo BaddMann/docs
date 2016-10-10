@@ -1,6 +1,16 @@
-## Working with the zentral configuration and probes
+## Working with the Zentral configuration and setup
 
-To change the `zentral` configuration or probes, edit the files in `/home/zentral/conf` on the server. When you are done, go in the `/home/zentral/zentral` dir (where the `docker-compose.yml` file is) and restart the updated services.
+In **docker-compose** based setups:
+
+To change the `zentral` configuration, edit files in `/home/zentral/conf` on the server. Mainly you may edit the following:
+
+- `base.json` - edit here for the main configuration like adding actions, integrations, etc. 
+- `contacts.json` edit here for contacts of admins, admin-groups to notify via email, SMS
+- `zentral.htpasswd` edit here for change the password htaccess protected Zentral web interface, Kibana, Prometheus
+- `nginx/conf.d/zentral.conf` edit here for nginx based settings
+- `tls` in this directory exchange certificate files with your own full chain of 3rd party signed TLS/SSL certs
+
+When you are done with editing, go to `/home/zentral/zentral` dir (where `docker-compose.yml` file is located) and restart the updated services with `docker-compose` .
 
 ## Commands for docker-compose
 
@@ -53,3 +63,4 @@ Follow nginx logs:
 ```bash
 $ sudo docker-compose logs nginx
 ```
+
