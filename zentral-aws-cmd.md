@@ -6,7 +6,7 @@ To change the `zentral` configuration, edit files in `/home/zentral/conf` on the
 
 - `base.json` - edit here for the main configuration like adding actions, integrations, etc. 
 - `contacts.json` edit here for contacts of admins, admin-groups to notify via email, SMS
-- `zentral.htpasswd` edit here for change the password htaccess protected Zentral web interface, Kibana, Prometheus
+- `/etc/nginx/zentral.htpasswd` edit here for change the password htaccess protected Zentral web interface, Kibana, Prometheus
 
 
 ## Commands for AWS ubuntu AMI 'Zentral all in one' (search in Public images)
