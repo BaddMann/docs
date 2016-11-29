@@ -7,7 +7,7 @@ This document will help you to start [Zentral](https://github.com/zentralopensou
 
 For setup we use the `gcloud` command line tool, the tool is installed as part of the the Google Cloud SDK. The Google Cloud SDK is available [here](https://cloud.google.com/sdk/)
 
-*Note: We also provide a guide for Amazon AWS, please look [here]().*
+*Note: We also provide a guide for Amazon AWS, please look [here](<https://github.com/zentralopensource/docs/blob/master/zentral-aws-setup.md>).*
 
 ## Overview
 

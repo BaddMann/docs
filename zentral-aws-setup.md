@@ -7,7 +7,7 @@ This document will help you to start [Zentral](https://github.com/zentralopensou
 
 For setup we use Amazon AWS web interface to launch a EC2 instance from a pre-build AMI.
 
-*Note: We also provide a guide for a Google Cloud based setup - please look [here]().*
+*Note: We also provide a guide for a Google Cloud based setup - please look [here](https://github.com/zentralopensource/docs/blob/master/zentral-gcloud-setup.md).*
 
 ## Overview
 
