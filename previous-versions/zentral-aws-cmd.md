@@ -1,3 +1,7 @@
+# Image based - AWS setup
+
+The Amazon AWS based setup is quick way to start Zentral.
+
 ## Working with the Zentral configuration and setup
 
 In **AWS** based setup:
@@ -9,15 +13,15 @@ To change the `zentral` configuration, edit files in `/home/zentral/conf` on the
 - `/etc/nginx/zentral.htpasswd` edit here for change the password htaccess protected Zentral web interface, Kibana, Prometheus
 
 
-## Commands for AWS ubuntu AMI 'Zentral all in one' (search in Public images)
 
-To bootstrap with FQDN:
-Requirements:
+## Requirements:
 
 - aws ssh-key must be set to connect to the AMI
 - username to connect with is "ubuntu" (AWS default ubuntu)
 - AWS AMI assigned IP address must be set in your DNS (so Let's Encrypt will work)
 - ports in security group must be opened for 443, 80, 22
+
+## Commands
 
 ```bash
 sh -i .ssh/ssh-key-zentral-aws.pem ubuntu@zentral.example.org sudo /home/zentral/app/utils/set_fqdn.py zentral.example.org

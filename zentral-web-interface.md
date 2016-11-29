@@ -3,8 +3,8 @@
 # Zentral web interface details
 Zentral web interface details:
 
-- Django 1.8 Web Framework
-- Bootstrap 3
+- Django 1.9 Web Framework
+- Bootstrap 4
 - Nginx
 
 This section is a short example overview from various areas in Zentral web interface as well as [Kibana4](<https://www.elastic.co/products/kibana>) and [Prometheus](<http://prometheus.io>)
