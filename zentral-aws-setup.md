@@ -57,7 +57,7 @@ Providing URL and tokens in the `base.json` configuration file is required to co
 ## AWS / EC2 setup
 
 We have previously covered AWS setup in a tutorial video, please also look [here](https://goo.gl/2hFN4X) in case you struggle to follow the instructions.
-We have example screenshots for AWS setup [here](https://github.com/zentralopensource/docs/images_aws), you can follow them along this document.
+We have example screenshots for AWS setup [here](https://github.com/zentralopensource/docs/blob/master/images_aws), you can follow them along this document.
 
 ### AWS Management Console
 

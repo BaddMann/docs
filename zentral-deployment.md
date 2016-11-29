@@ -49,10 +49,10 @@ A script is also provided to automatically configure Zentral and Nginx with Let'
 *Notes: You must setup DNS with valid FQDN, and set up Firewall with ports 80,443 enabled to succesfully run Let's Encrypt TLS certificate support*
 
 **Amazon AWS**
-Go [here](https://github.com/zentralopensource/docs/zentral-aws-setup.md) to start a tutorial for AWS based setup.
+Go [here](https://github.com/zentralopensource/docs/blob/master/zentral-aws-setup.md) to start a tutorial for AWS based setup.
 
 **Google Cloud**
-Go [here](https://github.com/zentralopensource/docs/zentral-gcloud-setup.md) to start a tutorial for Google Cloud based setup.
+Go [here](https://github.com/zentralopensource/docs/blob/master/zentral-gcloud-setup.md) to start a tutorial for Google Cloud based setup.
 
 ## SaaS / Managed
 

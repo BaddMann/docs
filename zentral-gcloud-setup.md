@@ -55,7 +55,7 @@ Providing URL and tokens in the `base.json` configuration file is required to co
 ## Google Cloud / gcloud setup
 
 We prefer the `gcloud` CLI setup and provide examples in this document.
-Of course Google Cloud setup is also possible in Google Cloud Console GUI, with exeption that you mus upload **Zentral all in one** pre-build image using provided `gcloud` command. We have example screenshots for Google Cloud setup [here](https://github.com/zentralopensource/docs/images_gcloud), you can follow them along this document. 
+Of course Google Cloud setup is also possible in Google Cloud Console GUI, with exeption that you mus upload **Zentral all in one** pre-build image using provided `gcloud` command. We have example screenshots for Google Cloud setup [here](https://github.com/zentralopensource/docs/blob/master/images_gcloud), you can follow them along this document. 
 
 ### Google Cloud Console
 

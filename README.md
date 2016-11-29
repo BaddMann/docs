@@ -14,6 +14,16 @@ Zentral will fit many kinds of public and private organizations which are either
 
 *Zentral is a great add on to strengthen productivity, stability, and security for the Mac platform - the full framework of Zentral will enable organizations in need, to establish a transparent, and open source Security Incident and Event Management Solution (SIEM), with outstanding OS X support.*
 
+## Zentral Deployment
+*latest update: November 2016*
+
+For Deployment look into this guide: <https://github.com/zentralopensource/docs/blob/master/zentral-deployment.md>
+
+For a quick AWS based setup: <https://github.com/zentralopensource/docs/blob/master/zentral-aws-setup.md>
+
+For a quick Google Cloud based setup: <https://github.com/zentralopensource/docs/blob/master/zentral-gcloud-setup.md>
+
+---
 
 ## Zentral Video Tutorial
 *latest update: May 2016*
