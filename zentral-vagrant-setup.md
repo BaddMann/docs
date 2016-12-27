@@ -20,11 +20,11 @@ We show how to launch a instance of Zentral based on our publicly available **Ze
 
 2. Read the requirements - you need to have latest VirtualBox and Vagrant installed. 
 
-3. Read the intersection on configuration files in Zentral. Details are important, we strongly recommend to change the default htaccess protection in `zentral.htpasswd` file, and you may want to enable integrations for 3rd party services in the `base.json` file.
+3. We provide a sequence of steps in the Vagrant section and launch a pre-build "Zentral all in one" vagrant box locally. 
 
-4. We provide a sequence of steps in the Vagrant section and launch a pre-build "Zentral all in one" vagrant box loacally. 
+4. Read the  overview of **Zentral all in one** build in CLI tools. These are available in `/home/zentral/app/utils/` once you connect via `vagrant ssh` to the running instance.
 
-5. Read the  overview of **Zentral all in one** build in CLI tools. These are available in `/home/zentral/app/utils/` once you connect via `vagrant ssh` to the running instance.
+5. Please also read section about configuration files in Zentral. We  recommend to change the default htaccess protection in `zentral.htpasswd` file, and you may want to enable integrations for 3rd party services in the `base.json` file.
 
 *Note: Please keep in mind this tutorial is a starting point, a full walk thru all options of Vagrant, VirtualBox, etc. is obviously out scope.*
 
