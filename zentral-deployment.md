@@ -1,12 +1,15 @@
 ![](https://github.com/apfelwerk/Zentral/wiki/images/Zentral_base_RGB.png)
 # Deployment
 
-We maintain two different deployment methodes for Zentral.
+We maintain different deployment methodes for Zentral.
 To start with Zentral you may choose your preferred method for deployment, please see below for details.
 
 The so far simplest solution to get started with Zentral is to run a cloud based  **"Zentral - all in one"** on Amazon AWS or Google Cloud. 
 We create pre-build images and release them as public images for AWS and Google Cloud.
-The pre-build images are build with [Packer](https://www.packer.io/), we use [Ansible](https://www.ansible.com/) as our provisioner with Packer. 
+
+For a local evaluation we provide a Vagrant based **"Zentral - all in one"** based on VirtualBox. Finally we also build a OVA file that usually could be deployed to VMWare Fusion, ESXi/vSphere or other virtualization hosts.
+
+All pre-build images are build with [Packer](https://www.packer.io/), we use [Ansible](https://www.ansible.com/) as our provisioner with Packer. 
 
 Depending on your need to further explore, develop, and contribute back to Zentral the `docker-compose` based install method is probably the way to go.
 
@@ -53,6 +56,9 @@ Go [here](https://github.com/zentralopensource/docs/blob/master/zentral-aws-setu
 
 **Google Cloud**
 Go [here](https://github.com/zentralopensource/docs/blob/master/zentral-gcloud-setup.md) to start a tutorial for Google Cloud based setup.
+
+**Vagrant**
+Go [here](https://github.com/zentralopensource/docs/blob/master/zentral-vagrant-setup.md) to start a tutorial for VirtualBox / Vagrant based setup.
 
 ## SaaS / Managed
 
