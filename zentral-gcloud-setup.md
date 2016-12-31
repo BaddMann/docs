@@ -123,28 +123,26 @@ Please enter your numeric choice:
 
 1. Make sure you've set IP address in your public DNS, create an *A record* to create a FQDN like *zentral.example.com* 
 
-2. Use the following command, provide your FQDN as parameter
-`sudo /home/zentral/app/utils/set_fqdn.py zentral.example.org`
+2. Run the  `setup.py` script, provide FQDN for the server, username and email for the login. 
+`sudo /home/zentral/app/utils/setup.py`
 
-3. You'll see feedback in Terminal about a unique **dhparam** and Let's Encrypt
-certificate created
+3. The `setup.py` script will generate a TLS certificate from Let's Encrypt and provide a https link at the end to initally set (reset) the password for the superuser to login.
 
 4. Tips to troubleshoot, just in case things have gone wrong somewhere: 
-	- Check ports 80/443 opened in Firewall 
-	- You can resolve the FQDN / external IP
-	- Check you provide the right FQDN as parameter and used `sudo` privileges
-	- In case you ran the command multiple times, check for conflicting Nginx conf files in `/etc/nginx/conf.d/`
+  - Check ports 80/443 opened inbound in your AWS Security Group 
+  - You can resolve the FQDN / external IP
+  - Check you provide the right FQDN as parameter for `setup.py`, crated a superuser and have used `sudo` privileges
+  - In case you ran the command multiple times with different parameters for FQDN, check for conflicting Nginx conf files in `/etc/nginx/conf.d/`
 
 
 **Open Zentral in your Browser**
 
-1. Start your favourite browser and navigate to your FQDN (i.e. zentral.example.com) 
+1. Start your favourite browser and navigate to your FQDN (i.e. zentral.example.org) 
 
-2. The access is protected by `htaccess`  use  **test** /  **test** to get initial access
+2. The access is possible for the user created 
 
 3. Congratulations, you should see the Zentral web interface now
 
-4. We recommend to change htaccess immediately (before you go on and enroll any clients)
 
 
 ### gcloud session examples
@@ -300,21 +298,39 @@ Please enter your numeric choice:  8
 Updating project ssh metadata...|Updated [https://www.googleapis.com/compute/v1/projects/zentral-demo-170801].          
 Updating project ssh metadata...done.                                                                                   
 Warning: Permanently added 'compute.235295947160261467' (ECDSA) to the list of known hosts.
+```
 
-# launch set_fqdn.py script, provide your server FQDN (i.e. sudo ../set_fqdn.py zentral.example.org)
-ubuntu@zentral-demo:~$ sudo /home/zentral/app/utils/set_fqdn.py zentral.example.org
+## Zentral - Setup TLS Certificate / User login
 
+We use Let's encrypt to generate and renew TLS/SSL certificate for Zentral.
+The Zentral build-in `setup.py` tool is also required to create the superuser to login to the Zentral web interface.
+
+```
+sudo /home/zentral/app/utils/setup.py 
+usage: setup.py [-h] [--self-signed-cert] [--local-email-delivery]
+                fqdn username email
+setup.py: the following arguments are required: fqdn, username, email
+```
+
+**Setup TLS/SSL with Let's Encrypt example **
+
+```bash
+# launch setup.py script, provide your server FQDN and username and email
+# finally there will be a password reset link for the created user
+
+ubuntu@zentral-demo:~$ sudo /home/zentral/app/utils/setup.py zentral.example.org henry henry@example.org
 Generating a 2048 bit RSA private key
-........................................................+++
-........................................+++
+..........................................................................+++
+.........................+++
 writing new private key to '/tmp/zentral.example.org/ssl/key.key'
 -----
-2016-11-28 10:42:01,625:WARNING:letsencrypt.client:Registering without email!
 
 IMPORTANT NOTES:
+ - If you lose your account credentials, you can recover through
+   e-mails sent to henry@example.org.
  - Congratulations! Your certificate and chain have been saved at
    /etc/letsencrypt/live/zentral.example.org/fullchain.pem. Your cert
-   will expire on 2017-02-26. To obtain a new version of the
+   will expire on 2017-03-31. To obtain a new version of the
    certificate in the future, simply run Let's Encrypt again.
  - Your account credentials have been saved in your Let's Encrypt
    configuration directory at /etc/letsencrypt. You should make a
@@ -328,10 +344,11 @@ IMPORTANT NOTES:
 
 Generate new dhparam ...
 Generating DSA parameters, 4096 bit long prime
-..............+..+......+.+.......+............................+..................+....+......+....................+.........+...+..+........+....+......+......+...........................+.+........+..................+..+............+.....+.........+.....+.+............................+++++++++++++++++++++++++++++++++++++++++++++++++++*
-........+..........+...+.....+..+........+......+.......+...+....+......+.+...+.............+........+...............+++++++++++++++++++++++++++++++++++++++++++++++++++*
+................+++++++++++++++++++++++++++++++++++++++++++++++++++*
+..+........+...+............+....+....+......+..........+.+......+...+................+...........+...........+...+...........+........+......+........+.........+...........+.........+...+........+...........+...........+....+...+...+.......................+...........+.............+.....+.+....+.+.......+.....+...........+.....+........+........+.....................+++++++++++++++++++++++++++++++++++++++++++++++++++*
 New dhparam generated
-
+Superuser henry henry@example.org created
+Password reset: https://zentral.example.org/accounts/reset/MQ/6ib-6b0343a229ec67de2264/
 ```
 
 ## Zentral - build in CLI tools
@@ -343,12 +360,6 @@ For a complete restart of `zentral` :
 
 ```bash
 sudo /home/zentral/app/utils/reload_restart.sh 
-```
-
-Edit htaccess file:
-
-```bash
-sudo nano /etc/nginx/zentral.htpasswd
 ```
 
 Zentral code update pulled from github :
