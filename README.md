@@ -1,4 +1,14 @@
-![](https://github.com/apfelwerk/Zentral/wiki/images/Zentral_base_RGB.png)
+
+
+Please visit the current documentation over at the zentral [wiki](https://github.com/zentralopensource/zentral/wiki)
+
+
+
+
+
+
+----
+## LEGACY DOCS:
 
 ## Zentral - a short summary
 
